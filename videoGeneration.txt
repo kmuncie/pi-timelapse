@@ -1,0 +1,2 @@
+// The command I run on my Mac for generating the video timelapses 
+ffmpeg -framerate 30 -i nyc_%d.jpg -c:v libx264 -vf fps=30 nycToday.mp4
