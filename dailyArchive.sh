@@ -6,7 +6,7 @@ TODAY=$(date +"%Y-%m-%d")
 cp -avr ~/webcam/images/today ~/webcam/images/todayTEMP
 
 # Delete days images immediately after move so new photos can start at 0001
-rm ~/webcam/image/today/*.jpg
+rm -rf ~/webcam/image/today/*
 
 # Upload to s3 bucket from temp folder
 aws s3 mv ~/webcam/images/todayTEMP/ s3://pi-timelapse-archive/$TODAY/ --recursive --exclude '*' --include '*.jpg'
